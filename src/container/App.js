@@ -6,6 +6,9 @@ import Footer from "./Footer/Footer";
 function App() {
   return (
     <div className="App">
+      <video autoPlay loop muted playsInline className="video-bg">
+        <source src="./assets/video/two-vid.mp4" type="video/mp4" />
+      </video>
       <Header />
       <Main />
       <Footer />

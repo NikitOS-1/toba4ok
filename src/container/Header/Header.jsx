@@ -1,11 +1,19 @@
 import "./Header.scss";
+import Cart from "../../components/Cart/Cart";
+import BtnBurgerMenu from "../../components/BurgerMenu/BtnBurgerMenu";
 
 const Header = () => {
   return (
     <div className="header">
-      <div className="header_menu">menu</div>
-      <div className="header_name">name</div>
-      <div className="header_cart">cart</div>
+      <div className="header_menu">
+        <BtnBurgerMenu />
+      </div>
+      <div className="header_name">
+        Toba4ok UA <img src="./assets/icons/ukraine_icon.png" alt="d" />
+      </div>
+      <div className="header_cart">
+        <Cart />
+      </div>
     </div>
   );
 };
