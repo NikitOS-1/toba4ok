@@ -3,9 +3,9 @@ import "./BtnBurgerMenu.scss";
 const BurgerMenu = () => {
   return (
     <div className="burger-menu">
-      <div className="burger-menu-line1"></div>
-      <div className="burger-menu-line2"></div>
-      <div className="burger-menu-line3"></div>
+      <div className="burger-menu-line one"></div>
+      <div className="burger-menu-line two"></div>
+      <div className="burger-menu-line three"></div>
     </div>
   );
 };

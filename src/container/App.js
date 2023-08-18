@@ -4,10 +4,11 @@ import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 
 function App() {
+  const video = "./assets/video/bgSmokeForPhone.mp4";
   return (
     <div className="App">
       <video autoPlay loop muted playsInline className="video-bg">
-        <source src="./assets/video/two-vid.mp4" type="video/mp4" />
+        <source src={video} type="video/mp4" />
       </video>
       <Header />
       <Main />
