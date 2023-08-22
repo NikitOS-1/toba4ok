@@ -11,7 +11,6 @@ const BurgerMenu = () => {
       <div className="burger-menu-line one"></div>
       <div className="burger-menu-line two"></div>
       <div className="burger-menu-line three"></div>
-      <div className="burger-menu-line three"></div>
     </div>
   );
 };
