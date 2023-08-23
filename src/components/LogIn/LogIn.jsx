@@ -16,7 +16,7 @@ const LogIn = () => {
       height: 0,
       opacity: 0,
       position: "absolute",
-      top: "60px",
+      top: "50px",
       right: 0,
     },
     show: {

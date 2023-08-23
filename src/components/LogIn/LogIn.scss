@@ -2,6 +2,7 @@
 
     .avatar-icon {
         position: relative;
+        cursor: pointer;
     }
 
     .avatar-about {
@@ -15,6 +16,7 @@
                 font-family: 'Poppins', sans-serif;
                 font-family: 'Press Start 2P';
                 font-size: 15px;
+                cursor: pointer;
 
                 &:hover {
                     color: #6004ff;
