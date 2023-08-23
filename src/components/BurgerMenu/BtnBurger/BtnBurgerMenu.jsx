@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./BtnBurgerMenu.scss";
-import { toggleMenu } from "../../redux/burgerMenuReducer";
+import { toggleMenu } from "../../../redux/burgerMenuReducer";
 
-const BurgerMenu = () => {
+const BtnBurgerMenu = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector((data) => data.burgerMenu.isOpen);
 
@@ -16,4 +16,4 @@ const BurgerMenu = () => {
     </div>
   );
 };
-export default BurgerMenu;
+export default BtnBurgerMenu;

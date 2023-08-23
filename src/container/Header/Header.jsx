@@ -1,6 +1,7 @@
 import "./Header.scss";
 import Cart from "../../components/Cart/Cart";
-import BtnBurgerMenu from "../../components/BurgerMenu/BtnBurgerMenu";
+import BtnBurgerMenu from "../../components/BurgerMenu/BtnBurger/BtnBurgerMenu";
+import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
 
 const Header = () => {
   return (

@@ -1,0 +1,16 @@
+.burger-list {
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 80px;
+    left: -30%;
+    transition: 0.5s;
+    z-index: 20;
+    opacity: 0;
+}
+
+.active {
+    left: 0px;
+    opacity: 1;
+}
