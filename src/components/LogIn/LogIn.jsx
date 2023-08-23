@@ -16,14 +16,16 @@ const LogIn = () => {
       height: 0,
       opacity: 0,
       position: "absolute",
-      top: "70px",
+      top: "60px",
+      right: 0,
     },
     show: {
       width: "150px",
       height: "max-content",
       opacity: 1,
       position: "absolute",
-      top: "70px",
+      top: "85px",
+      right: "10%",
     },
   };
 

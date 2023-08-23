@@ -28,6 +28,12 @@
                 margin-top: 48px;
                 font-size: 21px;
                 cursor: pointer;
+                background-clip: text;
+                color: transparent;
+                background-image: linear-gradient(to bottom, #ffffff, #6004ff);
+                -webkit-background-clip: text;
+                animation: gradient-animation 1s infinite;
+                background-size: 100% 12%;
             }
         }
     }
@@ -36,4 +42,14 @@
 .active {
     left: 0px;
     opacity: 1;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: bottom 10px right 20px;
+    }
+
+    100% {
+        background-position: bottom 20px right 10px;
+    }
 }

@@ -18,8 +18,24 @@
 
                 &:hover {
                     color: #6004ff;
+                    background-clip: text;
+                    color: transparent;
+                    background-image: linear-gradient(to bottom, #ffffff, #6004ff);
+                    -webkit-background-clip: text;
+                    animation: gradient-animation 1s infinite;
+                    background-size: 100% 11%;
                 }
             }
         }
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: bottom 10px right 20px;
+    }
+
+    100% {
+        background-position: bottom 20px right 10px;
     }
 }
