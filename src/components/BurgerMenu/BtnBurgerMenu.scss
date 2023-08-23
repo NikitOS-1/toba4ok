@@ -6,10 +6,26 @@
     justify-content: space-between;
 
     .burger-menu-line {
+        transition: 0.5s;
         width: 100%;
         height: 5px;
         background-color: white;
         box-shadow: 1px 1px 4px rgba(242, 242, 242, 0.994);
         border-radius: 5px;
+    }
+}
+
+.active {
+    .one {
+        transform: rotate(45deg) translate(6px, 11px)
+    }
+
+    .two {
+        opacity: 0;
+        transition-delay: 0s;
+    }
+
+    .three {
+        transform: rotate(-45deg) translate(6px, -11px);
     }
 }
