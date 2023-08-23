@@ -7,7 +7,7 @@ function App() {
   const video = "./assets/video/bgSmokeForPhone.mp4";
   return (
     <div className="App">
-      <video autoPlay loop muted playsInline className="video-bg">
+      <video autoPlay loop muted playsInline autoFocus className="video-bg">
         <source src={video} type="video/mp4" />
       </video>
       <Header />
