@@ -11,9 +11,9 @@ const Header = () => {
       </div>
       <div className="header_name">
         <div className="header_title">Toba4ok_UA</div>
-        <div className="icon_ua">
+        {/* <div className="icon_ua">
           <img src="./assets/icons/ukraine_icon.png" alt="Ukraine" />
-        </div>
+        </div> */}
       </div>
       <div className="header_cart-avatar">
         <div className="header_cart">
