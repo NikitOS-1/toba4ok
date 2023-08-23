@@ -5,7 +5,7 @@ import LogIn from "../../components/LogIn/LogIn";
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header_menu">
         <BtnBurgerMenu />
       </div>
@@ -23,7 +23,7 @@ const Header = () => {
           <LogIn />
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 export default Header;

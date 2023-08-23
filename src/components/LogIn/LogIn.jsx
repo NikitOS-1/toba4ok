@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./LogIn.scss";
 import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const LogIn = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,8 +42,12 @@ const LogIn = () => {
             className="avatar-about"
             variants={visibleVariant}>
             <ul className="login-menu">
-              <li>Sign In</li>
-              <li>Sign Up</li>
+              <li>
+                <Link to="sign-in">Sign In</Link>
+              </li>
+              <li>
+                <Link to="sign-up">Sign Up</Link>
+              </li>
             </ul>
           </motion.div>
         )}
