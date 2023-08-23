@@ -1,7 +1,7 @@
 import "./Header.scss";
 import Cart from "../../components/Cart/Cart";
 import BtnBurgerMenu from "../../components/BurgerMenu/BtnBurger/BtnBurgerMenu";
-import { Avatar } from "@mui/material";
+import LogIn from "../../components/LogIn/LogIn";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
           <Cart />
         </div>
         <div className="header_avatar">
-          <Avatar />
+          <LogIn />
         </div>
       </div>
     </div>

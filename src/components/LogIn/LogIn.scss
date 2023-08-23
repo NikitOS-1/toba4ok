@@ -1,0 +1,25 @@
+.avatar {
+
+    .avatar-icon {
+        position: relative;
+    }
+
+    .avatar-about {
+        .login-menu {
+            background-color: rgba(0, 0, 0, 0.488);
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px #6004ff;
+
+            li {
+                padding: 20px;
+                font-family: 'Poppins', sans-serif;
+                font-family: 'Press Start 2P';
+                font-size: 15px;
+
+                &:hover {
+                    color: #6004ff;
+                }
+            }
+        }
+    }
+}
