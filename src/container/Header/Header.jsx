@@ -10,7 +10,10 @@ const Header = () => {
         <BtnBurgerMenu />
       </div>
       <div className="header_name">
-        Toba4ok UA <img src="./assets/icons/ukraine_icon.png" alt="d" />
+        <div className="header_title">Toba4ok UA</div>
+        <div className="icon_ua">
+          <img src="./assets/icons/ukraine_icon.png" alt="d" />
+        </div>
       </div>
       <div className="header_cart">
         <Cart />

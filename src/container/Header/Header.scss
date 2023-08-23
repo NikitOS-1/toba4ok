@@ -9,4 +9,35 @@
     z-index: 2;
     color: white;
     z-index: 21;
+
+    .header_name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .header_title {
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Press Start 2P';
+            font-size: 23px;
+            background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #ffffff, #6004ff);
+            -webkit-background-clip: text;
+            animation: gradient-animation 5s infinite;
+        }
+
+        .icon_ua {
+            margin-left: 20px;
+        }
+    }
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 230px;
+    }
+
+    100% {
+        background-position: -230px;
+    }
 }
