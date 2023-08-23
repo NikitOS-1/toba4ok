@@ -17,7 +17,13 @@
         justify-content: center;
 
         .header_title {
-            font-family: 'Poppins', sans-serif;
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            font-family: 'Poppins',
+            sans-serif;
             font-family: 'Press Start 2P';
             font-size: 23px;
             background-clip: text;
@@ -26,6 +32,7 @@
             -webkit-background-clip: text;
             animation: gradient-animation 1s infinite;
             background-size: 100% 12%;
+
         }
 
         .icon_ua {

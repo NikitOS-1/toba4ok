@@ -1,8 +1,13 @@
 .avatar {
+    transition: 0.5s;
 
     .avatar-icon {
         position: relative;
         cursor: pointer;
+
+        &:hover {
+            box-shadow: 0px 0px 14px #6004ff;
+        }
     }
 
     .avatar-about {
