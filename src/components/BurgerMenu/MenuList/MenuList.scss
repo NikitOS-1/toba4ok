@@ -11,8 +11,8 @@
     font-family: 'Poppins', sans-serif;
     font-family: 'Press Start 2P', cursive;
     font-size: 19px;
-
     color: white;
+    transition: 0.3s;
 
     .item-list {
         display: flex;
@@ -24,7 +24,10 @@
             padding: 5px;
 
             &:hover {
-                color: rgb(159, 27, 247);
+                color: #6004ff;
+                margin-top: 48px;
+                font-size: 21px;
+                cursor: pointer;
             }
         }
     }

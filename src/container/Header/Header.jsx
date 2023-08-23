@@ -1,7 +1,6 @@
 import "./Header.scss";
 import Cart from "../../components/Cart/Cart";
 import BtnBurgerMenu from "../../components/BurgerMenu/BtnBurger/BtnBurgerMenu";
-import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
 
 const Header = () => {
   return (
@@ -10,9 +9,9 @@ const Header = () => {
         <BtnBurgerMenu />
       </div>
       <div className="header_name">
-        <div className="header_title">Toba4ok UA</div>
+        <div className="header_title">Toba4ok_UA</div>
         <div className="icon_ua">
-          <img src="./assets/icons/ukraine_icon.png" alt="d" />
+          <img src="./assets/icons/ukraine_icon.png" alt="Ukraine" />
         </div>
       </div>
       <div className="header_cart">
