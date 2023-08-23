@@ -31,6 +31,17 @@
             margin-left: 20px;
         }
     }
+
+    .header_cart-avatar {
+        display: flex;
+        align-items: center;
+
+        .header_cart {
+            margin-right: 30px;
+        }
+
+        .header_avatar {}
+    }
 }
 
 @keyframes gradient-animation {
