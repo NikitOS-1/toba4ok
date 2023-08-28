@@ -10,7 +10,8 @@ function App() {
       <video autoPlay loop muted playsInline autoFocus className="video-bg">
         <source src={video} type="video/mp4" />
       </video>
-      <Header />
+      1
+      <Header className="lg" />
       <Main />
       <Footer />
     </div>
