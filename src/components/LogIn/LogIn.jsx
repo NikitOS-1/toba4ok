@@ -3,10 +3,6 @@ import "./LogIn.scss";
 import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { openModal } from "../../redux/modalReducer";
-import UseModal from "../Modal/UseModal";
-import SignIn from "../../pages/SignIn/SignIn";
 
 const visibleVariant = {
   hidden: {
@@ -28,11 +24,7 @@ const visibleVariant = {
 };
 
 const LogIn = () => {
-  const modalOpen = useSelector(isOpen);
-  s;
-  const dispatch = useDispatch();
-
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpens, setIsOpen] = useState(false);
 
   const showMenu = () => {
     setIsOpen((prev) => !prev);
@@ -42,7 +34,7 @@ const LogIn = () => {
     <div className="avatar">
       <Avatar onClick={showMenu} className="avatar-icon" />
       <AnimatePresence>
-        {isOpen && (
+        {isOpens && (
           <motion.div
             initial={"hidden"}
             animate={"show"}
@@ -50,11 +42,11 @@ const LogIn = () => {
             className="avatar-about"
             variants={visibleVariant}>
             <ul className="login-menu">
-              <li>
-                <p>Sign In</p>
+              <li onClick={showMenu}>
+                <Link to="sign-in">Sign In</Link>
               </li>
-              <li>
-                <p>Sign Up</p>
+              <li onClick={showMenu}>
+                <Link to="sign-up">Sign Up</Link>
               </li>
             </ul>
           </motion.div>
@@ -63,4 +55,5 @@ const LogIn = () => {
     </div>
   );
 };
+
 export default LogIn;
