@@ -5,38 +5,37 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { openModal } from "../../redux/modalReducer";
+import UseModal from "../Modal/UseModal";
+import SignIn from "../../pages/SignIn/SignIn";
+
+const visibleVariant = {
+  hidden: {
+    width: "auto",
+    height: 0,
+    opacity: 0,
+    position: "absolute",
+    top: "50px",
+    right: 0,
+  },
+  show: {
+    width: "150px",
+    height: "max-content",
+    opacity: 1,
+    position: "absolute",
+    top: "85px",
+    right: "10%",
+  },
+};
 
 const LogIn = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const dispatch = useDispatch();
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const showMenu = () => {
     setIsOpen((prev) => !prev);
   };
 
-  const enterVariant = () => {
-    showMenu();
-    dispatch(openModal());
-  };
-
-  const visibleVariant = {
-    hidden: {
-      width: "auto",
-      height: 0,
-      opacity: 0,
-      position: "absolute",
-      top: "50px",
-      right: 0,
-    },
-    show: {
-      width: "150px",
-      height: "max-content",
-      opacity: 1,
-      position: "absolute",
-      top: "85px",
-      right: "10%",
-    },
-  };
   return (
     <div className="avatar">
       <Avatar onClick={showMenu} className="avatar-icon" />
@@ -49,11 +48,11 @@ const LogIn = () => {
             className="avatar-about"
             variants={visibleVariant}>
             <ul className="login-menu">
-              <li onClick={showMenu}>
-                <Link to="sign-in">Sign In</Link>
+              <li>
+                <p>Sign In</p>
               </li>
-              <li onClick={showMenu}>
-                <Link to="sign-up">Sign Up</Link>
+              <li>
+                <p>Sign Up</p>
               </li>
             </ul>
           </motion.div>
