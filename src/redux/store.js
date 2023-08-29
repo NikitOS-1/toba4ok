@@ -5,6 +5,6 @@ import modalReducer from "./modalReducer";
 export const store = configureStore({
   reducer: {
     burgerMenu: burgerMenuReducer,
-    toggleModal: modalReducer,
+    modal: modalReducer,
   },
 });

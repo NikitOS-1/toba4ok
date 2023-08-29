@@ -3,12 +3,20 @@ import "./LogIn.scss";
 import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { openModal } from "../../redux/modalReducer";
 
 const LogIn = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const showMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const enterVariant = () => {
+    showMenu();
+    dispatch(openModal());
   };
 
   const visibleVariant = {
@@ -29,7 +37,6 @@ const LogIn = () => {
       right: "10%",
     },
   };
-
   return (
     <div className="avatar">
       <Avatar onClick={showMenu} className="avatar-icon" />
@@ -42,10 +49,10 @@ const LogIn = () => {
             className="avatar-about"
             variants={visibleVariant}>
             <ul className="login-menu">
-              <li>
+              <li onClick={showMenu}>
                 <Link to="sign-in">Sign In</Link>
               </li>
-              <li>
+              <li onClick={showMenu}>
                 <Link to="sign-up">Sign Up</Link>
               </li>
             </ul>

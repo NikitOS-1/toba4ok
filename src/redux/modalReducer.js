@@ -8,14 +8,17 @@ const modalReducer = createSlice({
   name: "toggleModalReducer",
   initialState,
   reducers: {
-    toggleModal: (state, action) => {
-      state.isOpen = state.isOpen ? false : true;
+    closeModal: (state) => {
+      state.isOpen = false;
+    },
+    openModal: (state) => {
+      state.isOpen = true;
     },
   },
 });
 
-export const { toggleModal } = modalReducer.actions;
+export const { closeModal, openModal } = modalReducer.actions;
 
-export const isOpen = (state) => state.toggleModalReducer.isOpen;
+export const isOpen = (state) => state.modal.isOpen;
 
 export default modalReducer.reducer;

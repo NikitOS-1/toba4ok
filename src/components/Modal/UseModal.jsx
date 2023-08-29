@@ -1,16 +1,11 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { isOpen } from "../../redux/modalReducer";
 import Modal from "./Modal";
 
-const UseModal = ({ button, info }) => {
-  const dispatch = useDispatch();
+const UseModal = ({ content }) => {
   const modalOpen = useSelector(isOpen);
 
-  return (
-    <div>
-      <div>{button}</div>
-      {modalOpen && <Modal>{info}</Modal>}
-    </div>
-  );
+  return <div>{modalOpen && <Modal>{content}</Modal>}</div>;
 };
+
 export default UseModal;

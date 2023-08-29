@@ -1,15 +1,16 @@
 import { useDispatch } from "react-redux";
 import "./Modal.scss";
-import { toggleModal } from "../../redux/modalReducer";
+import { closeModal } from "../../redux/modalReducer";
 
 const Modal = ({ children }) => {
   const dispatch = useDispatch();
+
   return (
     <div className="modal-container">
       <div className="modal">
         <button
           className="modal_button-close"
-          onClick={() => dispatch(toggleModal())}>
+          onClick={() => dispatch(closeModal())}>
           Close
         </button>
         <div className="modal_content">{children}</div>
