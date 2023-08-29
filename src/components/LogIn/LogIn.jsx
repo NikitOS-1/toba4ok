@@ -3,7 +3,7 @@ import "./LogIn.scss";
 import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../redux/modalReducer";
 import UseModal from "../Modal/UseModal";
 import SignIn from "../../pages/SignIn/SignIn";
@@ -28,6 +28,8 @@ const visibleVariant = {
 };
 
 const LogIn = () => {
+  const modalOpen = useSelector(isOpen);
+  s;
   const dispatch = useDispatch();
 
   const [isOpen, setIsOpen] = useState(false);
