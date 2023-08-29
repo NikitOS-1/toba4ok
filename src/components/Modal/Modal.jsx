@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import "./Modal.css";
+import "./Modal.scss";
 import { toggleModal } from "../../redux/modalReducer";
 
 const Modal = ({ children }) => {
@@ -12,7 +12,7 @@ const Modal = ({ children }) => {
           onClick={() => dispatch(toggleModal())}>
           Close
         </button>
-        {children}
+        <div className="modal_content">{children}</div>
       </div>
     </div>
   );
