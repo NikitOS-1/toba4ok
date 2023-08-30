@@ -30,7 +30,7 @@ const ParallaxRow = ({
             }
           : null
       }>
-      <div className="parallax-row" style={rowStyle}>
+      <div className="parallax-row" style={amination ? visible : hidden}>
         <div
           className="content"
           style={revers ? { marginLeft: "40%" } : { marginRight: "40%" }}>
