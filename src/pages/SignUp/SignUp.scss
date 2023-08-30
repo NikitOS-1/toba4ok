@@ -1,9 +1,9 @@
-.sign-in_container {
+.sign-up_container {
     margin-top: 40px;
     font-family: 'Poppins', sans-serif;
     font-family: 'Source Code Pro', monospace;
 
-    .sign-in_content {
+    .sign-up_content {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -49,7 +49,25 @@
             }
         }
 
-        .btn-login {
+        .agree {
+            margin-top: -30px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 13px;
+            }
+
+            span {
+                font-size: 12px;
+                margin-left: 10px;
+                opacity: 0.5;
+            }
+        }
+
+        .btn-create {
             height: 38px;
 
             button {
@@ -72,22 +90,6 @@
                 }
             }
 
-        }
-
-        .forgot_pass {
-            margin-top: 40px;
-
-            a {
-                cursor: pointer;
-                text-decoration: none;
-                color: rgba(255, 255, 255, 0.519);
-                transition: 0.5;
-
-                &:hover {
-                    color: rgba(255, 255, 255, 0.819);
-                    text-shadow: 5px 5px 10px #6004ff;
-                }
-            }
         }
     }
 }

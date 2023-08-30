@@ -8,6 +8,7 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password2, setPassword2] = useState("");
   const [typePass, setTypePass] = useState(false);
 
   const seePass = () => {
@@ -23,28 +24,37 @@ const SignUp = () => {
             type="text"
             value={name}
             onChange={(e) => setName((prev) => (prev = e.target.value))}
+            placeholder="Name"
           />
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail((prev) => (prev = e.target.value))}
+            placeholder="Email"
+          />
+          <input
+            type={typePass ? "text" : "password"}
+            value={password}
+            onChange={(e) => setPassword((prev) => (prev = e.target.value))}
+            placeholder="Password"
           />
           <div>
             <input
               type={typePass ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword((prev) => (prev = e.target.value))}
+              value={password2}
+              onChange={(e) => setPassword2((prev) => (prev = e.target.value))}
+              placeholder="Repeat password"
             />
             <div className="see_pass" onClick={seePass}>
               {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
             </div>
           </div>
-
-          <div className="btn-login">
-            <button>Login</button>
+          <div className="agree">
+            <input type="checkbox" name="" id="" />
+            <span>I agree to the processing of my information</span>
           </div>
-          <div className="forgot_pass">
-            <a href="#">Forgot password?</a>
+          <div className="btn-create">
+            <button>Create an account</button>
           </div>
         </div>
       </div>
