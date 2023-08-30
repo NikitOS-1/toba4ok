@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./MenuList.scss";
 import { Link } from "react-router-dom";
+import { toggleMenu } from "../../../redux/burgerMenuReducer";
 
 const MenuList = () => {
   const dispatch = useDispatch();
@@ -8,7 +9,7 @@ const MenuList = () => {
 
   return (
     <div className={`burger-list ${isOpen ? "active" : ""}`}>
-      <ul className="item-list">
+      <ul className="item-list" onClick={() => dispatch(toggleMenu())}>
         <li>
           <Link to="tobac">Tobac</Link>
         </li>
