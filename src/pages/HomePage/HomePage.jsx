@@ -25,6 +25,9 @@ const HomePage = () => {
         description={text1}
         revers={true}
       />
+      <div style={{ textAlign: "center", margin: "40px" }}>
+        ------------TOP SALES------------
+      </div>
       <ParallaxRow
         imageUrl={img2}
         title="Заголовок 1"
