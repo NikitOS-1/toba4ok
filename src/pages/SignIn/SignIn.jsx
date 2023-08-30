@@ -7,6 +7,11 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [typePass, setTypePass] = useState(false);
+
+  const seePass = () => {
+    setTypePass((prev) => !prev);
+  };
 
   return (
     <Modal>
@@ -20,12 +25,12 @@ const SignIn = () => {
           />
           <div>
             <input
-              type="password"
+              type={typePass ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword((prev) => (prev = e.target.value))}
             />
-            <div className="see_pass">
-              <RemoveRedEyeIcon />
+            <div className="see_pass" onClick={seePass}>
+              {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
             </div>
           </div>
 
@@ -33,7 +38,7 @@ const SignIn = () => {
             <button>Login</button>
           </div>
           <div className="forgot_pass">
-            <a href="#">Forgot password</a>
+            <a href="#">Forgot password?</a>
           </div>
         </div>
       </div>
