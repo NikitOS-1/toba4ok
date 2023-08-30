@@ -3,13 +3,22 @@ import ParallaxRow from "../../components/ParallaxRow/ParallaxRow";
 import "./HomePage.scss";
 
 const HomePage = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsVisible(true);
+    }, 200);
+    return () => setIsVisible(false);
+  }, []);
+
   const img1 = process.env.PUBLIC_URL + "/images/kalyan1.jpg";
   const img2 = process.env.PUBLIC_URL + "/images/kalyan2.jpg";
   let text1 =
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam neque ducimus quia labore debitis quod. Doloremque repellat perferendis, fugit porro, aliquid placeat laudantium debitis voluptatum incidunt assumenda pariatur saepe provident orem ipsum dolor sit amet, consectetur adipisicing elit. Ullam neque ducimus quia labore debitis quod. Doloremque repellat perferendis, fugit porro, aliquid placeat laudantium debitis voluptatum incidunt assumenda pariatur saepe provident";
 
   return (
-    <div className="container">
+    <div className={`container ${isVisible ? "visible" : "hidden"}`}>
       <ParallaxRow
         imageUrl={img1}
         title="Заголовок"
