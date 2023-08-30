@@ -4,6 +4,7 @@ import "./Main.scss";
 import SignIn from "../../pages/SignIn/SignIn";
 import HomePage from "../../pages/HomePage/HomePage";
 import SignUp from "../../pages/SignUp/SignUp";
+import TobacPage from "../../pages/TobacPage/TobacPage";
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/sign-in" element={<SignIn />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/tobac" element={<TobacPage />} />
       </Routes>
     </main>
   );

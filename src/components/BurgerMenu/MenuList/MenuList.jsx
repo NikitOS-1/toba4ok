@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./MenuList.scss";
+import { Link } from "react-router-dom";
 
 const MenuList = () => {
   const dispatch = useDispatch();
@@ -8,11 +9,21 @@ const MenuList = () => {
   return (
     <div className={`burger-list ${isOpen ? "active" : ""}`}>
       <ul className="item-list">
-        <li>Tobac</li>
-        <li>Сoals</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Shiping</li>
+        <li>
+          <Link to="tobac">Tobac</Link>
+        </li>
+        <li>
+          <Link to="coals">Сoals</Link>
+        </li>
+        <li>
+          <Link to="about">About</Link>
+        </li>
+        <li>
+          <Link to="contact">Contact</Link>
+        </li>
+        <li>
+          <Link to="shiping">Shiping</Link>
+        </li>
       </ul>
     </div>
   );
