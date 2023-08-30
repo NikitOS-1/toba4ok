@@ -3,6 +3,10 @@
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     font-family: 'Source Code Pro', monospace;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
     .video-bg {
         position: fixed;
