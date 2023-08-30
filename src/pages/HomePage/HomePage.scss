@@ -1,42 +1,16 @@
 .container {
     width: 100%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 1s ease, transform 1s ease;
-
-    .wrap_paralax {
-
-        .row1,
-        .row2 {
-            margin: 190px 40px 40px 40px;
-            width: 90%;
-            display: flex;
-            align-items: center;
-
-            .picture_paralax {
-                width: 100%;
-                height: 400px;
-                background-repeat: no-repeat;
-                background-attachment: fixed;
-                background-size: 1000px 800px;
-                background-position: center;
-                transition: background-size 0.3s ease-in-out
-            }
-
-            .info {
-                padding: 40px;
-                color: white;
-            }
-        }
-    }
+    // opacity: 0;
+    // transform: translateY(20px);
+    // transition: opacity 1s ease, transform 1s ease;
 }
 
-.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+// .visible {
+    //     opacity: 1;
+    //     transform: translateY(0);
+    // }
 
-.hidden {
-    opacity: 0;
-    transform: translateY(-50px);
-}
+    // .hidden {
+    //     opacity: 0;
+    //     transform: translateY(-50px);
+    // }

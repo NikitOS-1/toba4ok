@@ -24,6 +24,7 @@ const HomePage = () => {
         title="Заголовок"
         description={text1}
         revers={true}
+        amination={true}
       />
       <div style={{ textAlign: "center", margin: "40px" }}>
         ------------TOP SALES------------
@@ -32,6 +33,7 @@ const HomePage = () => {
         imageUrl={img2}
         title="Заголовок 1"
         description={text1 + text1 + text1}
+        amination={false}
       />
     </div>
   );
