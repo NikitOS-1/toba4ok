@@ -1,10 +1,11 @@
-import "./SignIn.scss";
+import "./SignUp.scss";
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
-const SignIn = () => {
+const SignUp = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [typePass, setTypePass] = useState(false);
@@ -15,21 +16,24 @@ const SignIn = () => {
 
   return (
     <Modal>
-      <div className="sign-in_container">
-        <div className="sign-in_content">
-          <h1>Sign In</h1>
+      <div className="sign-up_container">
+        <div className="sign-up_content">
+          <h1>Sign Up</h1>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName((prev) => (prev = e.target.value))}
+          />
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail((prev) => (prev = e.target.value))}
-            placeholder="Email"
           />
           <div>
             <input
               type={typePass ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword((prev) => (prev = e.target.value))}
-              placeholder="Password"
             />
             <div className="see_pass" onClick={seePass}>
               {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
@@ -47,4 +51,4 @@ const SignIn = () => {
     </Modal>
   );
 };
-export default SignIn;
+export default SignUp;

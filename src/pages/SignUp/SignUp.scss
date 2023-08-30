@@ -1,0 +1,93 @@
+.sign-in_container {
+    margin-top: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+
+    .sign-in_content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px 60px 50px 50px;
+
+        h1 {
+            margin-bottom: 40px;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 5px 5px 10px #6004ff;
+        }
+
+        input {
+            margin: 10px 0px;
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            border: none;
+            opacity: 0.8;
+            transition: 0.5;
+
+            &:focus-visible {
+                outline: none;
+                opacity: 1;
+                border: 1px solid #6004ff;
+                width: 198px;
+                height: 28px;
+            }
+        }
+
+        .see_pass {
+            width: 30px;
+            height: 30px;
+            position: relative;
+            left: 210px;
+            top: -35px;
+            transition: 0.3s;
+
+            &:hover {
+                color: #6004ff;
+                cursor: pointer;
+            }
+        }
+
+        .btn-login {
+            height: 38px;
+
+            button {
+                cursor: pointer;
+                width: 200px;
+                height: 38px;
+                border: none;
+                border-radius: 5px;
+                background-color: #6004ff8a;
+                color: white;
+                transition: 0.3s;
+                box-shadow: 0px 8px rgba(255, 255, 255, 0.407);
+
+                &:hover {
+                    margin-top: 8px;
+                    height: 42px;
+                    background-color: #6004ff;
+                    border: 1px solid rgba(255, 255, 255, 0.386);
+                    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.707);
+                }
+            }
+
+        }
+
+        .forgot_pass {
+            margin-top: 40px;
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.519);
+                transition: 0.5;
+
+                &:hover {
+                    color: rgba(255, 255, 255, 0.819);
+                    text-shadow: 5px 5px 10px #6004ff;
+                }
+            }
+        }
+    }
+}
