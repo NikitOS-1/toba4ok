@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
-import "./Main.scss";
 import Loading from "../../components/Loading/Loading";
+import "./Main.scss";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));

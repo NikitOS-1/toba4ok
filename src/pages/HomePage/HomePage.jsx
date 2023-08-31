@@ -8,7 +8,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsVisible(true);
-    }, 200);
+    }, 2000);
     return () => setIsVisible(false);
   }, []);
 
@@ -21,17 +21,17 @@ const HomePage = () => {
     <div className={`container ${isVisible ? "visible" : "hidden"}`}>
       <ParallaxRow
         imageUrl={img1}
-        title="Заголовок"
+        title="Lorem ipsum"
         description={text1}
         revers={true}
-        amination={true}
+        amination={false}
       />
       <div style={{ textAlign: "center", margin: "40px" }}>
         ------------TOP SALES------------
       </div>
       <ParallaxRow
         imageUrl={img2}
-        title="Заголовок 1"
+        title="Lorem ipsum 2"
         description={text1 + text1 + text1}
         amination={false}
       />

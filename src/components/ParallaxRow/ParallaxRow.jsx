@@ -7,30 +7,29 @@ const ParallaxRow = ({
   revers = false,
   amination = false,
 }) => {
-  const visible = {
-    backgroundImage: `url(${imageUrl})`,
+  const styleBgImg = { backgroundImage: `url(${imageUrl})` };
+  const styleVisible = {
     opacity: 1,
     transform: "translateY(0)",
   };
-
-  const hidden = {
-    backgroundImage: `url(${imageUrl})`,
+  const styleHidden = {
     opacity: 0,
     transform: 'translateY("-50px")',
   };
+
   return (
     <div
       className="parallax-wrap"
       style={
         amination
           ? {
-              opacity: 0,
+              opacity: 1,
               transform: "translateY(20px)",
               transition: "opacity 1s ease, transform 1s ease",
             }
           : null
       }>
-      <div className="parallax-row" style={amination ? visible : hidden}>
+      <div className="parallax-row" style={styleBgImg}>
         <div
           className="content"
           style={revers ? { marginLeft: "40%" } : { marginRight: "40%" }}>
