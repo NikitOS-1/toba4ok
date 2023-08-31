@@ -11,25 +11,27 @@
     }
 
     .avatar-about {
+        width: 180px;
+        height: max-content;
+
         .login-menu {
-            background-color: rgba(0, 0, 0, 0.788);
+            background-color: rgba(0, 0, 0, 0.700);
             border-radius: 5px;
             box-shadow: 0px 0px 10px #6004ff;
 
             li {
-                padding: 20px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
 
-                a {
-                    width: 100%;
-                    height: 100%;
-                    text-decoration: none;
-                    font-family: 'Poppins', sans-serif;
-                    font-family: 'Press Start 2P';
-                    font-size: 15px;
-                    cursor: pointer;
-                    color: #ffffff;
+                &:hover {
+                    border-radius: 5px;
+                    box-shadow: 0px 0px 5px #6004ff;
+                    background-color: #ffffff09;
+                    stroke: #6004ff;
 
-                    &:hover {
+                    a {
                         color: #6004ff;
                         background-clip: text;
                         color: transparent;
@@ -38,6 +40,17 @@
                         animation: gradient-animation 1s infinite;
                         background-size: 100% 11%;
                     }
+                }
+
+                a {
+                    text-decoration: none;
+                    font-family: 'Poppins', sans-serif;
+                    font-family: 'Press Start 2P';
+                    font-size: 15px;
+                    cursor: pointer;
+                    color: #ffffff;
+
+                    &:hover {}
                 }
             }
         }

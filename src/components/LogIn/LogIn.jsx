@@ -3,19 +3,21 @@ import "./LogIn.scss";
 import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import LoginIcon from "@mui/icons-material/Login";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 const visibleVariant = {
   hidden: {
-    width: "auto",
-    height: 0,
+    // width: "auto",
+    // height: 0,
     opacity: 0,
     position: "absolute",
     top: "50px",
     right: 0,
   },
   show: {
-    width: "150px",
-    height: "max-content",
+    // width: "150px",
+    // height: "max-content",
     opacity: 1,
     position: "absolute",
     top: "85px",
@@ -41,11 +43,12 @@ const LogIn = () => {
             exit={"hidden"}
             className="avatar-about"
             variants={visibleVariant}>
-            <ul className="login-menu">
-              <li onClick={showMenu}>
-                <Link to="sign-in">Sign In</Link>
+            <ul className="login-menu" onClick={showMenu}>
+              <li>
+                <LoginIcon /> <Link to="sign-in">Sign In</Link>
               </li>
-              <li onClick={showMenu}>
+              <li>
+                <LogoutIcon />
                 <Link to="sign-up">Sign Up</Link>
               </li>
             </ul>
