@@ -4,9 +4,14 @@
     .avatar-icon {
         position: relative;
         cursor: pointer;
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        border-radius: 50%;
 
         &:hover {
             box-shadow: 0px 0px 14px #6004ff;
+            stroke: #6004ff;
         }
     }
 

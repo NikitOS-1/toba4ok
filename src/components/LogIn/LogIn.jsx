@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PersonIcon from "@mui/icons-material/Person";
 
 const visibleVariant = {
   hidden: {
@@ -34,7 +35,7 @@ const LogIn = () => {
 
   return (
     <div className="avatar">
-      <Avatar onClick={showMenu} className="avatar-icon" />
+      <PersonIcon onClick={showMenu} className="avatar-icon" />
       <AnimatePresence>
         {isOpens && (
           <motion.div
