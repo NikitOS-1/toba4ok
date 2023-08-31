@@ -1,34 +1,10 @@
 import "./ParallaxRow.css";
 
-const ParallaxRow = ({
-  imageUrl,
-  title,
-  description,
-  revers = false,
-  amination = false,
-}) => {
+const ParallaxRow = ({ imageUrl, title, description, revers = false }) => {
   const styleBgImg = { backgroundImage: `url(${imageUrl})` };
-  const styleVisible = {
-    opacity: 1,
-    transform: "translateY(0)",
-  };
-  const styleHidden = {
-    opacity: 0,
-    transform: 'translateY("-50px")',
-  };
 
   return (
-    <div
-      className="parallax-wrap"
-      style={
-        amination
-          ? {
-              opacity: 1,
-              transform: "translateY(20px)",
-              transition: "opacity 1s ease, transform 1s ease",
-            }
-          : null
-      }>
+    <div className="parallax-wrap">
       <div className="parallax-row" style={styleBgImg}>
         <div
           className="content"

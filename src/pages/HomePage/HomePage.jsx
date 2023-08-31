@@ -8,7 +8,7 @@ const HomePage = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsVisible(true);
-    }, 2000);
+    }, 200);
     return () => setIsVisible(false);
   }, []);
 
@@ -24,7 +24,6 @@ const HomePage = () => {
         title="Lorem ipsum"
         description={text1}
         revers={true}
-        amination={false}
       />
       <div style={{ textAlign: "center", margin: "40px" }}>
         ------------TOP SALES------------
@@ -33,7 +32,6 @@ const HomePage = () => {
         imageUrl={img2}
         title="Lorem ipsum 2"
         description={text1 + text1 + text1}
-        amination={false}
       />
     </div>
   );
