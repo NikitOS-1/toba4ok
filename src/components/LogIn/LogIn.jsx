@@ -46,11 +46,20 @@ const LogIn = () => {
             variants={visibleVariant}>
             <ul className="login-menu" onClick={showMenu}>
               <li>
-                <LoginIcon /> <Link to="sign-in">Sign In</Link>
+                <Link to="sign-in">
+                  <span className="icon-sign">
+                    <LoginIcon />
+                  </span>
+                  Sign In
+                </Link>
               </li>
               <li>
-                <LogoutIcon />
-                <Link to="sign-up">Sign Up</Link>
+                <Link to="sign-up">
+                  <span className="icon-sign">
+                    <LogoutIcon />
+                  </span>
+                  Sign Up
+                </Link>
               </li>
             </ul>
           </motion.div>
