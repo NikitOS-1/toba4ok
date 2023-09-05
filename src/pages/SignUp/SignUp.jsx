@@ -8,6 +8,22 @@ import { Controller, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [checked, setChecked] = useState(false);
+  const [typePass, setTypePass] = useState(false);
+  const [error, setError] = useState("");
+  const auth = getAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (auth.currentUser) {
+      navigate("/user");
+    }
+  }, []);
+
   const {
     register,
     formState: { errors, isValid },
@@ -20,15 +36,6 @@ const SignUp = () => {
       checkbox: false,
     },
   });
-
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password1, setPassword1] = useState("");
-  const [password2, setPassword2] = useState("");
-  const [typePass, setTypePass] = useState(false);
-  const [error, setError] = useState("");
-  const auth = getAuth();
-  const navigate = useNavigate();
 
   const seePass = () => setTypePass((prev) => !prev);
   const createAccount = () => {
@@ -50,11 +57,6 @@ const SignUp = () => {
       setError("Uncorrect password");
     }
   };
-  useEffect(() => {
-    if (auth.currentUser) {
-      navigate("/user");
-    }
-  }, []);
 
   return (
     <Modal>
@@ -160,26 +162,38 @@ const SignUp = () => {
             <div className="agree">
               <Controller
                 name="checkbox"
+                className="checkbox"
                 control={control}
-                rules={{ required: true }}
-                render={({ field }) => <input type="checkbox" {...field} />}
+                rules={{ required: "Please, read and agree to our rules" }}
+                render={({ field }) => (
+                  <input
+                    checked={checked}
+                    onClick={(e) => setChecked(e.target.checked)}
+                    type="checkbox"
+                    {...field}
+                  />
+                )}
               />
-
               <span>I agree to the processing of my information</span>
+            </div>
+            <div className="error">
+              {errors?.checkbox && (
+                <p style={{ color: "tomato", margin: "0px 0px 20px 0px" }}>
+                  {errors?.checkbox?.message || "Error!"}
+                </p>
+              )}
             </div>
 
             <div className="error">
               {error && (
                 <p style={{ color: "tomato", margin: "0px 0px 20px 0px" }}>
-                  {error || "Error!"}
+                  {error || "Something went wrong!"}
                 </p>
               )}
             </div>
 
             <div className="btn-create">
-              <button type="submit" disabled={!isValid}>
-                Create an account
-              </button>
+              <button type="submit">Create an account</button>
             </div>
           </div>
         </form>
