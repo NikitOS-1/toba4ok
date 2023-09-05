@@ -1,7 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "./SignUp.scss";
 import Modal from "../../components/Modal/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { Controller, useForm } from "react-hook-form";
@@ -42,7 +42,7 @@ const SignUp = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(errorCode + errorMessage);
+          setError(errorMessage);
         });
       reset();
       navigate("/user");
@@ -50,6 +50,11 @@ const SignUp = () => {
       setError("Uncorrect password");
     }
   };
+  useEffect(() => {
+    if (auth.currentUser) {
+      navigate("/user");
+    }
+  }, []);
 
   return (
     <Modal>
@@ -172,7 +177,7 @@ const SignUp = () => {
             </div>
 
             <div className="btn-create">
-              <button type="submit" onClick={createAccount} disabled={!isValid}>
+              <button type="submit" disabled={!isValid}>
                 Create an account
               </button>
             </div>
