@@ -3,6 +3,7 @@ import { Suspense, lazy } from "react";
 import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
 import Loading from "../../components/Loading/Loading";
 import "./Main.scss";
+import UserPage from "../../pages/UserPage/UserPage";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
@@ -43,6 +44,14 @@ const Main = () => {
           element={
             <Suspense fallback={<Loading />}>
               <TobacPage />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/user"
+          element={
+            <Suspense fallback={<Loading />}>
+              <UserPage />
             </Suspense>
           }
         />
