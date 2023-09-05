@@ -1,3 +1,4 @@
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "./SignUp.scss";
 import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
@@ -8,11 +9,29 @@ const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [typePass, setTypePass] = useState(false);
+  const auth = getAuth();
 
-  const seePass = () => {
-    setTypePass((prev) => !prev);
+  const seePass = () => setTypePass((prev) => !prev);
+  const createAccount = () => {
+    if (password1 === password2) {
+      setPassword((prev) => (prev = password1));
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode + errorMessage);
+        });
+    } else {
+      console.log("Uncorrect password");
+    }
   };
 
   return (
@@ -34,8 +53,8 @@ const SignUp = () => {
           />
           <input
             type={typePass ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword((prev) => (prev = e.target.value))}
+            value={password1}
+            onChange={(e) => setPassword1((prev) => (prev = e.target.value))}
             placeholder="Password"
           />
           <div>
@@ -54,7 +73,7 @@ const SignUp = () => {
             <span>I agree to the processing of my information</span>
           </div>
           <div className="btn-create">
-            <button>Create an account</button>
+            <button onClick={createAccount}>Create an account</button>
           </div>
         </div>
       </div>
