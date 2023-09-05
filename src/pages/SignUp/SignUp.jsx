@@ -4,29 +4,36 @@ import Modal from "../../components/Modal/Modal";
 import { useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
   const {
     register,
     formState: { errors, isValid },
     handleSubmit,
+    control,
     reset,
-  } = useForm({ mode: "onBlur" });
+  } = useForm({
+    mode: "onBlur",
+    defaultValues: {
+      checkbox: false,
+    },
+  });
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [typePass, setTypePass] = useState(false);
+  const [error, setError] = useState("");
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const seePass = () => setTypePass((prev) => !prev);
   const createAccount = () => {
     if (password1 === password2) {
-      setPassword((prev) => (prev = password1));
-      createUserWithEmailAndPassword(auth, email, password)
+      createUserWithEmailAndPassword(auth, email, password1)
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
@@ -37,17 +44,20 @@ const SignUp = () => {
           const errorMessage = error.message;
           console.log(errorCode + errorMessage);
         });
+      reset();
+      navigate("/user");
     } else {
-      console.log("Uncorrect password");
+      setError("Uncorrect password");
     }
   };
 
   return (
     <Modal>
       <div className="sign-up_container">
-        <form>
+        <form onSubmit={handleSubmit(createAccount)}>
           <div className="sign-up_content">
             <h1>Sign Up</h1>
+
             <label className="name">
               <input
                 type="text"
@@ -63,7 +73,6 @@ const SignUp = () => {
                 placeholder="Name"
               />
             </label>
-
             <div className="error">
               {errors?.name && (
                 <p style={{ color: "tomato" }}>
@@ -75,19 +84,60 @@ const SignUp = () => {
             <label className="email">
               <input
                 type="email"
+                {...register("email", {
+                  required: "You need to fill in a Email",
+                  minLength: {
+                    value: 5,
+                    message: "This is not a valid email",
+                  },
+                  pattern: {
+                    value: /[@]/,
+                    message: "This is not a valid email",
+                  },
+                  pattern: {
+                    value: /[.]/,
+                    message: "This is not a valid email",
+                  },
+                })}
                 value={email}
                 onChange={(e) => setEmail((prev) => (prev = e.target.value))}
                 placeholder="Email"
               />
             </label>
+            <div className="error">
+              {errors?.email && (
+                <p style={{ color: "tomato" }}>
+                  {errors?.email?.message || "Error!"}
+                </p>
+              )}
+            </div>
 
-            <input
-              type={typePass ? "text" : "password"}
-              value={password1}
-              onChange={(e) => setPassword1((prev) => (prev = e.target.value))}
-              placeholder="Password"
-            />
-            <div>
+            <label className="pass">
+              <input
+                {...register("pass", {
+                  required: "You need to fill in a password",
+                  minLength: {
+                    value: 6,
+                    message: "Your password must be at least 6 characters",
+                  },
+                })}
+                type={typePass ? "text" : "password"}
+                value={password1}
+                onChange={(e) =>
+                  setPassword1((prev) => (prev = e.target.value))
+                }
+                placeholder="Password"
+              />
+            </label>
+            <div className="error">
+              {errors?.pass && (
+                <p style={{ color: "tomato" }}>
+                  {errors?.pass?.message || "Error!"}
+                </p>
+              )}
+            </div>
+
+            <div className="pass2">
               <input
                 type={typePass ? "text" : "password"}
                 value={password2}
@@ -96,14 +146,31 @@ const SignUp = () => {
                 }
                 placeholder="Repeat password"
               />
+
               <div className="see_pass" onClick={seePass}>
                 {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
               </div>
             </div>
+
             <div className="agree">
-              <input type="checkbox" name="" id="" />
+              <Controller
+                name="checkbox"
+                control={control}
+                rules={{ required: true }}
+                render={({ field }) => <input type="checkbox" {...field} />}
+              />
+
               <span>I agree to the processing of my information</span>
             </div>
+
+            <div className="error">
+              {error && (
+                <p style={{ color: "tomato", margin: "0px 0px 20px 0px" }}>
+                  {error || "Error!"}
+                </p>
+              )}
+            </div>
+
             <div className="btn-create">
               <button type="submit" onClick={createAccount} disabled={!isValid}>
                 Create an account
