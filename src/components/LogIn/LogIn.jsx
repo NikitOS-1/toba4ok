@@ -1,11 +1,12 @@
 import { useState } from "react";
 import "./LogIn.scss";
-import { Avatar } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginIcon from "@mui/icons-material/Login";
 import LogoutIcon from "@mui/icons-material/Logout";
 import PersonIcon from "@mui/icons-material/Person";
+import { getAuth, signOut } from "firebase/auth";
+import { Person } from "@mui/icons-material";
 
 const visibleVariant = {
   hidden: {
@@ -28,9 +29,16 @@ const visibleVariant = {
 
 const LogIn = () => {
   const [isOpens, setIsOpen] = useState(false);
+  const auth = getAuth();
+  const navigate = useNavigate();
 
   const showMenu = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const logout = () => {
+    signOut(auth);
+    navigate("/");
   };
 
   return (
@@ -45,22 +53,35 @@ const LogIn = () => {
             className="avatar-about"
             variants={visibleVariant}>
             <ul className="login-menu" onClick={showMenu}>
-              <li>
-                <Link to="sign-in">
-                  <span className="icon-sign">
-                    <LoginIcon />
-                  </span>
-                  Sign In
-                </Link>
-              </li>
-              <li>
-                <Link to="sign-up">
-                  <span className="icon-sign">
-                    <LogoutIcon />
-                  </span>
-                  Sign Up
-                </Link>
-              </li>
+              {auth.currentUser ? (
+                <li onClick={logout}>
+                  <Link to="logout">
+                    <span className="icon-logout">
+                      <LogoutIcon />
+                    </span>
+                    Logout
+                  </Link>
+                </li>
+              ) : (
+                <>
+                  <li>
+                    <Link to="sign-in">
+                      <span className="icon-sign">
+                        <LoginIcon />
+                      </span>
+                      Sign In
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="sign-up">
+                      <span className="icon-sign">
+                        <Person />
+                      </span>
+                      Sign Up
+                    </Link>
+                  </li>
+                </>
+              )}
             </ul>
           </motion.div>
         )}
