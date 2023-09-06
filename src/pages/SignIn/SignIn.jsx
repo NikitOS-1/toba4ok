@@ -1,18 +1,37 @@
 import "./SignIn.scss";
 import Modal from "../../components/Modal/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import GoogleButton from "react-google-button";
+import { useNavigate } from "react-router-dom";
+import { getAuth } from "firebase/auth";
+import { useForm } from "react-hook-form";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [typePass, setTypePass] = useState(false);
+  const [error, setError] = useState("");
+  const auth = getAuth();
+  const navigate = useNavigate();
 
-  const seePass = () => {
-    setTypePass((prev) => !prev);
-  };
+  useEffect(() => {
+    if (auth.currentUser) {
+      navigate("/user");
+    }
+  }, []);
+
+  const {
+    register,
+    formState: { errors, isValid },
+    handleSubmit,
+    reset,
+  } = useForm({
+    mode: "onBlur",
+  });
+
+  const seePass = () => setTypePass((prev) => !prev);
 
   return (
     <Modal>
