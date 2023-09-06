@@ -85,20 +85,46 @@ const SignIn = () => {
               )}
             </div>
 
-            <div className="password">
-              <input
-                type={typePass ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword((prev) => (prev = e.target.value))}
-                placeholder="Password"
-              />
-              <div className="see_pass" onClick={seePass}>
-                {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+            <label className="pass">
+              <div className="password">
+                <input
+                  {...register("pass", {
+                    required: "You need to fill in a password",
+                    minLength: {
+                      value: 6,
+                      message: "Your password must be at least 6 characters",
+                    },
+                  })}
+                  type={typePass ? "text" : "password"}
+                  value={password}
+                  onChange={(e) =>
+                    setPassword((prev) => (prev = e.target.value))
+                  }
+                  placeholder="Password"
+                />
+                <div className="see_pass" onClick={seePass}>
+                  {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+                </div>
               </div>
+            </label>
+            <div className="error">
+              {errors?.pass && (
+                <p style={{ color: "tomato", margin: "0px 0px 20px 0px" }}>
+                  {errors?.pass?.message || "Error!"}
+                </p>
+              )}
+            </div>
+
+            <div className="error_all">
+              {error && (
+                <p style={{ color: "tomato", margin: "20px 0px" }}>
+                  {error || "Error!"}
+                </p>
+              )}
             </div>
 
             <div className="btn-login">
-              <button>Login</button>
+              <button type="submit">Login</button>
             </div>
 
             <div className="forgot_pass">
