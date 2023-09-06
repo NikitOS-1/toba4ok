@@ -38,6 +38,7 @@ const SignUp = () => {
   });
 
   const seePass = () => setTypePass((prev) => !prev);
+
   const createAccount = () => {
     if (password1 === password2) {
       createUserWithEmailAndPassword(auth, email, password1)
