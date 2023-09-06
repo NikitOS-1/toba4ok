@@ -5,8 +5,8 @@ import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
-import { getAuth } from "firebase/auth";
 import { useForm } from "react-hook-form";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -33,42 +33,58 @@ const SignIn = () => {
 
   const seePass = () => setTypePass((prev) => !prev);
 
+  const signIn = () => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        navigate("/user");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        setError(errorMessage);
+      });
+  };
+
   return (
     <Modal>
       <div className="sign-in_container">
-        <div className="sign-in_content">
-          <h1>Sign In</h1>
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail((prev) => (prev = e.target.value))}
-            placeholder="Email"
-          />
-          <div>
+        <form onSubmit={handleSubmit(signIn)}>
+          <div className="sign-in_content">
+            <h1>Sign In</h1>
             <input
-              type={typePass ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword((prev) => (prev = e.target.value))}
-              placeholder="Password"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail((prev) => (prev = e.target.value))}
+              placeholder="Email"
             />
-            <div className="see_pass" onClick={seePass}>
-              {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+            <div>
+              <input
+                type={typePass ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword((prev) => (prev = e.target.value))}
+                placeholder="Password"
+              />
+              <div className="see_pass" onClick={seePass}>
+                {typePass ? <VisibilityOffIcon /> : <RemoveRedEyeIcon />}
+              </div>
             </div>
-          </div>
 
-          <div className="btn-login">
-            <button>Login</button>
+            <div className="btn-login">
+              <button>Login</button>
+            </div>
+            <div className="forgot_pass">
+              <a href="#">Forgot password?</a>
+            </div>
+            <div className="line_with_text">
+              <div className="line"></div>
+              <div className="text">or</div>
+              <div className="line"></div>
+            </div>
+            <GoogleButton />
           </div>
-          <div className="forgot_pass">
-            <a href="#">Forgot password?</a>
-          </div>
-          <div className="line_with_text">
-            <div className="line"></div>
-            <div className="text">or</div>
-            <div className="line"></div>
-          </div>
-          <GoogleButton />
-        </div>
+        </form>
       </div>
     </Modal>
   );
