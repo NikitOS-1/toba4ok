@@ -1,9 +1,10 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
 import Loading from "../../components/Loading/Loading";
 import "./Main.scss";
 import UserPage from "../../pages/UserPage/UserPage";
+import RequireAuth from "../../hooks/PrivatePages/RequireAuth";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
@@ -13,6 +14,7 @@ const TobacPage = lazy(() => import("../../pages/TobacPage/TobacPage"));
 const Main = () => {
   return (
     <main className="main">
+      <Link to={"/user"}>user</Link>
       <MenuList />
       <Routes>
         <Route
@@ -50,9 +52,11 @@ const Main = () => {
         <Route
           path="/user"
           element={
-            <Suspense fallback={<Loading />}>
-              <UserPage />
-            </Suspense>
+            <RequireAuth>
+              <Suspense fallback={<Loading />}>
+                <UserPage />
+              </Suspense>
+            </RequireAuth>
           }
         />
       </Routes>
