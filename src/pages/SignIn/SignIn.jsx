@@ -53,13 +53,39 @@ const SignIn = () => {
         <form onSubmit={handleSubmit(signIn)}>
           <div className="sign-in_content">
             <h1>Sign In</h1>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail((prev) => (prev = e.target.value))}
-              placeholder="Email"
-            />
-            <div>
+
+            <label className="email">
+              <input
+                type="email"
+                {...register("email", {
+                  required: "You need to fill in a Email",
+                  minLength: {
+                    value: 5,
+                    message: "This is not a valid email",
+                  },
+                  pattern: {
+                    value: /[@]/,
+                    message: "This is not a valid email",
+                  },
+                  pattern: {
+                    value: /[.]/,
+                    message: "This is not a valid email",
+                  },
+                })}
+                value={email}
+                onChange={(e) => setEmail((prev) => (prev = e.target.value))}
+                placeholder="Email"
+              />
+            </label>
+            <div className="error">
+              {errors?.email && (
+                <p style={{ color: "tomato" }}>
+                  {errors?.email?.message || "Error!"}
+                </p>
+              )}
+            </div>
+
+            <div className="password">
               <input
                 type={typePass ? "text" : "password"}
                 value={password}
@@ -74,15 +100,20 @@ const SignIn = () => {
             <div className="btn-login">
               <button>Login</button>
             </div>
+
             <div className="forgot_pass">
               <a href="#">Forgot password?</a>
             </div>
+
             <div className="line_with_text">
               <div className="line"></div>
               <div className="text">or</div>
               <div className="line"></div>
             </div>
-            <GoogleButton />
+
+            <div className="btn-google">
+              <GoogleButton />
+            </div>
           </div>
         </form>
       </div>
