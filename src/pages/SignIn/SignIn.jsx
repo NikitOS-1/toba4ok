@@ -72,6 +72,7 @@ const SignIn = () => {
             photo: user.photoURL,
           })
         );
+        navigate("/user");
       })
       .catch((error) => {
         const errorCode = error.code;
