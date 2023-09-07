@@ -6,7 +6,12 @@ import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import GoogleButton from "react-google-button";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -14,6 +19,7 @@ const SignIn = () => {
   const [typePass, setTypePass] = useState(false);
   const [error, setError] = useState("");
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -44,6 +50,31 @@ const SignIn = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         setError(errorMessage);
+      });
+  };
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+        console.log(credential);
+        console.log(token);
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
       });
   };
 
@@ -138,7 +169,7 @@ const SignIn = () => {
             </div>
 
             <div className="btn-google">
-              <GoogleButton />
+              <GoogleButton onClick={signInWithGoogle} />
             </div>
           </div>
         </form>
