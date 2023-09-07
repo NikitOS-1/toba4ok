@@ -11,6 +11,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  onAuthStateChanged,
 } from "firebase/auth";
 import { addUser } from "../../redux/userData";
 import { useDispatch } from "react-redux";
@@ -26,9 +27,9 @@ const SignIn = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (auth.currentUser) {
-      navigate("/user");
-    }
+    onAuthStateChanged(auth, (user) => {
+      user ? navigate("/user") : navigate("/sign-in");
+    });
   }, []);
 
   const {
