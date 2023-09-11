@@ -14,7 +14,6 @@ const TobacPage = lazy(() => import("../../pages/TobacPage/TobacPage"));
 const Main = () => {
   return (
     <main className="main">
-      <Link to={"/user"}>user</Link>
       <MenuList />
       <Routes>
         <Route
