@@ -1,6 +1,6 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import "./UserPage.scss";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../redux/userData";
@@ -20,6 +20,7 @@ const UserPage = () => {
   const auth = getAuth();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [avatarLetter, setAvatarLetter] = useState(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -34,6 +35,7 @@ const UserPage = () => {
             photo: user.photoURL,
           })
         );
+        setAvatarLetter((prev) => (prev = user.email[0].toUpperCase()));
       } else {
         dispatch(removeUser());
         navigate("/");
@@ -49,9 +51,11 @@ const UserPage = () => {
       <p>
         <div className="avatar_name">
           {!photo ? (
-            <div className="avatar_letter">{email[0].toUpperCase()}</div>
+            <div className="avatar_letter">{avatarLetter}</div>
           ) : (
-            <img src={photo} alt="Photo" />
+            <div className="avatar_photo">
+              <img src={photo} alt="Photo" />
+            </div>
           )}
           {!name ? (
             <p>{email}</p>
