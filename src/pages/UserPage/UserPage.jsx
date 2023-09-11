@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../../redux/userData";
+import Table from "../../components/Table/Table";
 
 const UserPage = () => {
   const auth = getAuth();
@@ -41,6 +42,7 @@ const UserPage = () => {
         <h2>{name}</h2>
         <h3>{email}</h3>
         <p>Your order history is displayed here</p>
+        <Table />
       </p>
     </div>
   );
