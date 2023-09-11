@@ -48,7 +48,10 @@ const UserPage = () => {
 
   return (
     <div className="user_container">
-      <p>
+      <div className="welcome_user">
+        <h2>Wellcome {name || email}!</h2>
+      </div>
+      <div className="ava_desc">
         <div className="avatar_name">
           {!photo ? (
             <div className="avatar_letter">{avatarLetter}</div>
@@ -58,19 +61,28 @@ const UserPage = () => {
             </div>
           )}
           {!name ? (
-            <p>{email}</p>
+            <p className="avatarEmail">Email: {email}</p>
           ) : (
             <>
-              <p>{name}</p>
-              <p>{email}</p>
+              <p className="avatarName">Name: {name}</p>
+              <p className="avatarEmail">Email: {email}</p>
             </>
           )}
         </div>
-        <p>Your order history is displayed here</p>
+        <div className="description_user">
+          <p>
+            This is your personal account, all your purchases will be saved here
+          </p>
+        </div>
+      </div>
+      <div className="user_table">
+        <div className="title_table">
+          <p>Your order history is displayed here</p>
+        </div>
         <div className="table_orders_history">
           <Table data={data} />
         </div>
-      </p>
+      </div>
     </div>
   );
 };
