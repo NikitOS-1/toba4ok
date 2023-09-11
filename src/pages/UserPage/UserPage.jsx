@@ -47,12 +47,13 @@ const UserPage = () => {
   return (
     <div className="user_container">
       <p>
-        <p>Your account was created in {createTimeAccount}</p>
         <img src={photo} alt="Photo" />
         <h2>{name}</h2>
         <h3>{email}</h3>
         <p>Your order history is displayed here</p>
-        <Table data={data} />
+        <div className="table_orders_history">
+          <Table data={data} />
+        </div>
       </p>
     </div>
   );
