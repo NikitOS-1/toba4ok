@@ -1,7 +1,7 @@
 .user_container {
     margin: 0 auto;
     padding: 15px;
-    width: 60%;
+    width: 80%;
     height: max-content;
     background-color: rgba(255, 255, 255, 0.304);
     border: none;
@@ -19,21 +19,31 @@
         font-family: 'Poppins', sans-serif;
         font-family: 'Press Start 2P', cursive;
         text-shadow: 1px 1px 2px #6004ff;
+        line-height: 3rem;
+
+        @media (max-width: 769px) {
+            font-size: 20px;
+        }
     }
 
     .ava_desc {
+        margin-top: 20px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .avatar_name {
+            width: 40%;
+            padding: 2rem;
             background-color: rgba(255, 255, 255, 0.431);
-            padding: 20px;
             border-radius: 10px;
-            margin-top: 30px;
-            margin-left: 30px;
             box-shadow: 4px 4px 5px #6004ff64;
+
+            @media (max-width: 769px) {
+                width: 80%;
+            }
 
             .avatar_letter {
                 display: flex;
@@ -62,12 +72,17 @@
         }
 
         .description_user {
+            padding: 2rem;
+            width: 40%;
+
+            @media (max-width: 769px) {
+                width: 80%;
+            }
+
             p {
-                margin-right: 200px;
                 font-family: 'Poppins', sans-serif;
                 font-family: 'Press Start 2P', cursive;
                 font-size: 10px;
-                width: 300px;
                 line-height: 20px;
                 color: #6004ff;
             }
