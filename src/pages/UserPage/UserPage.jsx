@@ -12,7 +12,7 @@ let data = [
     order: "Tobac UNITY 'Fruit MIX'",
     address: "Nikolaev",
     date: "09.11.2023",
-    amount: "149 UA",
+    amount: "149 UAN",
   },
 ];
 
