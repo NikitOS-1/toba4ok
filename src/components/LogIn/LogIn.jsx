@@ -54,14 +54,19 @@ const LogIn = () => {
             variants={visibleVariant}>
             <ul className="login-menu" onClick={showMenu}>
               {auth.currentUser ? (
-                <li onClick={logout}>
-                  <Link to="logout">
-                    <span className="icon-logout">
-                      <LogoutIcon />
-                    </span>
-                    Logout
-                  </Link>
-                </li>
+                <>
+                  <li>
+                    <Link to="user">My account</Link>
+                  </li>
+                  <li onClick={logout}>
+                    <Link to="logout">
+                      <span className="icon-logout">
+                        <LogoutIcon />
+                      </span>
+                      Logout
+                    </Link>
+                  </li>
+                </>
               ) : (
                 <>
                   <li>
