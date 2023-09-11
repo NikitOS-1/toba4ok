@@ -1,0 +1,28 @@
+.container-card_brand_tobac {
+    padding: 20px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #6004ff;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: -5px -5px 10px tomato;
+
+        h3 {
+            color: tomato;
+        }
+    }
+
+    h3 {
+        margin: 20px 0px 10px 0px;
+        color: black;
+        font-weight: bold;
+    }
+}

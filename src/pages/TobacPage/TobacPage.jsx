@@ -1,25 +1,13 @@
+import CardBrandTobac from "../../components/CardBrandTobac/CardBrandTobac";
 import { brandTobaco } from "../../redux/data_BrandTobaco";
 import "./TobacPage.scss";
 
 const TobacPage = () => {
-  console.log(brandTobaco.length);
   return (
     <div>
-      TobacPage
-      <div
-        style={{
-          margin: "0 auto",
-          display: "flex",
-          flexWrap: "wrap",
-          width: "80%",
-          alignItems: "center",
-          justifyContent: "center",
-        }}>
+      <div className="tobac_container">
         {brandTobaco.map((el, i) => (
-          <div key={i}>
-            <img src={el.logoURl} alt="Logo" />
-            <div>{el.brand}</div>
-          </div>
+          <CardBrandTobac brand={el.brand} logoURl={el.logoURl} key={i} />
         ))}
       </div>
     </div>
