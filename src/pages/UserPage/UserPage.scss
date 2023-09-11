@@ -9,7 +9,12 @@
     color: black;
     box-shadow: 0px 0px 20px #6004ff;
 
-    .table_orders_history {
-        margin: 0 auto;
+    .avatar_name {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        height: max-content;
     }
 }

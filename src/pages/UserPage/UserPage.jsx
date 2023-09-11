@@ -47,9 +47,21 @@ const UserPage = () => {
   return (
     <div className="user_container">
       <p>
-        <img src={photo} alt="Photo" />
-        <h2>{name}</h2>
-        <h3>{email}</h3>
+        <div className="avatar_name">
+          {!photo ? (
+            <div className="avatar_letter">{email[0].toUpperCase()}</div>
+          ) : (
+            <img src={photo} alt="Photo" />
+          )}
+          {!name ? (
+            <p>{email}</p>
+          ) : (
+            <>
+              <p>{name}</p>
+              <p>{email}</p>
+            </>
+          )}
+        </div>
         <p>Your order history is displayed here</p>
         <div className="table_orders_history">
           <Table data={data} />
