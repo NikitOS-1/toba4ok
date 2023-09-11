@@ -12,6 +12,11 @@
     transition: 0.3s;
     cursor: pointer;
 
+    img {
+        width: 80%;
+        height: auto;
+    }
+
     &:hover {
         box-shadow: -5px -5px 10px tomato;
 
@@ -24,5 +29,6 @@
         margin: 20px 0px 10px 0px;
         color: black;
         font-weight: bold;
+        font-size: 1rem;
     }
 }
