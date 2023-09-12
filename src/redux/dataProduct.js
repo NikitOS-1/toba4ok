@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { brandTobaco } from "./data_BrandTobaco";
+import { dataProductTobac } from "../data/dataProductTobac";
 
 const initialState = {
-  data: brandTobaco,
+  data: dataProductTobac,
 };
 
 const dataProduct = createSlice({
@@ -12,4 +12,5 @@ const dataProduct = createSlice({
 });
 
 export const {} = dataProduct.actions;
+
 export default dataProduct.reducer;

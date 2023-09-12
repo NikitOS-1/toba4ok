@@ -56,8 +56,12 @@ const Main = () => {
           }
         />
         <Route
-          path={`/tobac/:${brand}`}
-          element={<BrandPage brand={brand} />}
+          path={`/tobac/${brand}`}
+          element={
+            <Suspense fallback={<Loading />}>
+              <BrandPage brand={brand} />
+            </Suspense>
+          }
         />
         <Route
           path="/user"

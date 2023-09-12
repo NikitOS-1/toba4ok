@@ -1,4 +1,4 @@
-export const brandTobaco = [
+export const dataProductTobac = [
   {
     brand: "4:20",
     logoURl: "./images/tobac_brand/kupit-tabak-dlya-kalyana-4-20-160x120.png",
