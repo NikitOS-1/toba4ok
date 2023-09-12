@@ -1,10 +1,6 @@
 .container-card_brand_tobac {
     padding: 20px;
     width: 20%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     background-color: white;
     margin: 10px;
     border-radius: 5px;
@@ -12,8 +8,16 @@
     transition: 0.3s;
     cursor: pointer;
 
+    a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
     img {
-        width: 80%;
+        width: 70%;
         height: auto;
     }
 

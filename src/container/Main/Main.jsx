@@ -1,17 +1,20 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import MenuList from "../../components/BurgerMenu/MenuList/MenuList";
 import Loading from "../../components/Loading/Loading";
 import "./Main.scss";
-import UserPage from "../../pages/UserPage/UserPage";
 import RequireAuth from "../../hooks/PrivatePages/RequireAuth";
+import { useSelector } from "react-redux";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
 const SignUp = lazy(() => import("../../pages/SignUp/SignUp"));
 const TobacPage = lazy(() => import("../../pages/TobacPage/TobacPage"));
+const UserPage = lazy(() => import("../../pages/UserPage/UserPage"));
 
 const Main = () => {
+  const brand = useSelector((state) => state.sellectBrand.brand);
+
   return (
     <main className="main">
       <MenuList />
@@ -48,6 +51,7 @@ const Main = () => {
             </Suspense>
           }
         />
+
         <Route
           path="/user"
           element={
