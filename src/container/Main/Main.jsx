@@ -5,6 +5,7 @@ import Loading from "../../components/Loading/Loading";
 import "./Main.scss";
 import RequireAuth from "../../hooks/PrivatePages/RequireAuth";
 import { useSelector } from "react-redux";
+import BrandPage from "../../pages/BrandPage/BrandPage";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
@@ -56,17 +57,7 @@ const Main = () => {
         />
         <Route
           path={`/tobac/:${brand}`}
-          element={
-            <div
-              style={{
-                backgroundColor: "tomato",
-                width: "100vw",
-                height: "100vh",
-                color: "white",
-              }}>
-              {brand}
-            </div>
-          }
+          element={<BrandPage brand={brand} />}
         />
         <Route
           path="/user"

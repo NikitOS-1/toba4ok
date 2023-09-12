@@ -11,9 +11,12 @@ const sellectBrandTobaco = createSlice({
     sellectBrand: (state, action) => {
       state.brand = action.payload;
     },
+    deleteBrand: (state) => {
+      state.brand = "";
+    },
   },
 });
 
-export const { sellectBrand } = sellectBrandTobaco.actions;
+export const { sellectBrand, deleteBrand } = sellectBrandTobaco.actions;
 
 export default sellectBrandTobaco.reducer;
