@@ -13,8 +13,11 @@ const TobacPage = lazy(() => import("../../pages/TobacPage/TobacPage"));
 const UserPage = lazy(() => import("../../pages/UserPage/UserPage"));
 
 const Main = () => {
+  const currentPath = useLocation().pathname;
+
   const brand = useSelector((state) => state.sellectBrand.brand);
 
+  console.log(brand);
   return (
     <main className="main">
       <MenuList />
@@ -51,7 +54,20 @@ const Main = () => {
             </Suspense>
           }
         />
-
+        <Route
+          path={`/tobac/:${brand}`}
+          element={
+            <div
+              style={{
+                backgroundColor: "tomato",
+                width: "100vw",
+                height: "100vh",
+                color: "white",
+              }}>
+              {brand}
+            </div>
+          }
+        />
         <Route
           path="/user"
           element={
