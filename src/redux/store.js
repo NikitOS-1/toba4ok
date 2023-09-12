@@ -3,6 +3,7 @@ import burgerMenuReducer from "./burgerMenuReducer";
 import modalReducer from "./modalReducer";
 import userData from "./userData";
 import sellectBrandTobaco from "./sellectBrandTobaco";
+import dataProduct from "./dataProduct";
 
 export const store = configureStore({
   reducer: {
@@ -10,5 +11,6 @@ export const store = configureStore({
     modal: modalReducer,
     user: userData,
     sellectBrand: sellectBrandTobaco,
+    dataProduct: dataProduct,
   },
 });

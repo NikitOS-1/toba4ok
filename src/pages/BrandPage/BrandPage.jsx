@@ -2,13 +2,13 @@ import "./BrandPage.scss";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { deleteBrand } from "../../redux/sellectBrandTobaco";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { brandTobaco } from "../../redux/data_BrandTobaco";
 
 const BrandPage = ({ brand }) => {
   const dispatch = useDispatch();
-  const location = useLocation();
   const navigate = useNavigate();
-  console.log(location);
+  const filterBrand = brandTobaco.filter((el) => el.brand == brand);
 
   return (
     <div>
