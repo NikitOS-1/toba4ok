@@ -12,7 +12,7 @@ const CardBrandTobac = ({ logoURl, brand }) => {
 
   return (
     <div className="container-card_brand_tobac">
-      <NavLink to={`/tobac/${brand}`} onClick={selectBrand}>
+      <NavLink to={`${brand}`} onClick={selectBrand}>
         <img src={logoURl} alt={logoURl} />
         <h3>{brand}</h3>
       </NavLink>

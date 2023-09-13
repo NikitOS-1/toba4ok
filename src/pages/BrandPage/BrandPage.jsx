@@ -1,6 +1,6 @@
 import "./BrandPage.scss";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const BrandPage = ({ brand }) => {
   const dispatch = useDispatch();
@@ -10,6 +10,7 @@ const BrandPage = ({ brand }) => {
     <div>
       <button onClick={() => navigate(-1)}>Back</button>
       <h1>{brand}</h1>
+      {/* <Outlet /> */}
     </div>
   );
 };
