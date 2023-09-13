@@ -6,6 +6,7 @@ import "./Main.scss";
 import RequireAuth from "../../hooks/PrivatePages/RequireAuth";
 import { useSelector } from "react-redux";
 import BrandPage from "../../pages/BrandPage/BrandPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
@@ -69,6 +70,16 @@ const Main = () => {
             <RequireAuth>
               <Suspense fallback={<Loading />}>
                 <UserPage />
+              </Suspense>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <RequireAuth>
+              <Suspense fallback={<Loading />}>
+                <NotFoundPage />
               </Suspense>
             </RequireAuth>
           }
