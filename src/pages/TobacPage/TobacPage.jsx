@@ -11,7 +11,6 @@ const TobacPage = () => {
       <div className="tobac_container">
         {data.map((el, i) => (
           <CardBrandTobac brand={el.brand} logoURl={el.logoURl} key={i} />
-          <CardBrandTobac brand={el.brand} logoURl={el.logoURl} key={i} />
         ))}
       </div>
       {/* <Outlet /> */}
