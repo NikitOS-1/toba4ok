@@ -14,6 +14,7 @@ const TobacPage = () => {
         ))}
       </div>
       {/* <Outlet /> */}
+      {/* <Outlet /> */}
     </div>
   );
 };
