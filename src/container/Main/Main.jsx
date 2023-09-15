@@ -33,7 +33,7 @@ const Main = () => {
           }
         />
         <Route
-          path="sign-in"
+          path="/sign-in"
           element={
             <Suspense fallback={<Loading />}>
               <SignIn />
@@ -41,7 +41,7 @@ const Main = () => {
           }
         />
         <Route
-          path="sign-up"
+          path="/sign-up"
           element={
             <Suspense fallback={<Loading />}>
               <SignUp />
@@ -49,7 +49,7 @@ const Main = () => {
           }
         />
         <Route
-          path="tobac"
+          path="/tobac"
           element={
             <Suspense fallback={<Loading />}>
               <TobacPage />
@@ -57,7 +57,7 @@ const Main = () => {
           }
         />
         <Route
-          path={`/tobac/${brand}`}
+          path={`/tobac/:${brand}`}
           element={
             <Suspense fallback={<Loading />}>
               <BrandPage brand={brand} />
@@ -76,7 +76,7 @@ const Main = () => {
           }
         />
         <Route
-          path="*"
+          path="/*"
           element={
             <RequireAuth>
               <Suspense fallback={<Loading />}>
