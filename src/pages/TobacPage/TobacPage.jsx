@@ -13,7 +13,6 @@ const TobacPage = () => {
           <CardBrandTobac brand={el.brand} logoURl={el.logoURl} key={i} />
         ))}
       </div>
-      {/* <Outlet /> */}
     </div>
   );
 };

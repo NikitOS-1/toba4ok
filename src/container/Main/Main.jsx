@@ -54,16 +54,16 @@ const Main = () => {
             <Suspense fallback={<Loading />}>
               <TobacPage />
             </Suspense>
-          }>
-          <Route
-            path={`${brand}`}
-            element={
-              <Suspense fallback={<Loading />}>
-                <BrandPage brand={brand} />
-              </Suspense>
-            }
-          />
-        </Route>
+          }
+        />
+        <Route
+          path={`/tobac/${brand}`}
+          element={
+            <Suspense fallback={<Loading />}>
+              <BrandPage brand={brand} />
+            </Suspense>
+          }
+        />
 
         <Route
           path="/user"
