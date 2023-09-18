@@ -19,7 +19,6 @@ const Main = () => {
 
   const brand = useSelector((state) => state.sellectBrand.brand);
 
-  console.log(brand);
   return (
     <main className="main">
       <MenuList />

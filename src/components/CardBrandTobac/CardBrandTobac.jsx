@@ -8,6 +8,7 @@ const CardBrandTobac = ({ logoURl, brand }) => {
 
   const selectBrand = () => {
     dispatch(sellectBrand(brand));
+    localStorage.setItem("selectedBrand", JSON.stringify(brand));
   };
 
   return (
