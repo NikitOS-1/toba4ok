@@ -1,18 +1,26 @@
 .cart {
-    display: flex;
-    align-items: center;
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
 
-    span {
-        margin-right: 5px;
-        font-size: 15px;
-        font-family: 'Poppins', sans-serif;
-        font-family: 'Press Start 2P', cursive;
-    }
+        span {
+            margin-right: 5px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            font-family: 'Press Start 2P', cursive;
+        }
 
 
-    &:hover {
-        text-shadow: 2px 2px 10px #6004ff;
-        color: #6004ff;
-        cursor: pointer;
+        &:hover {
+            text-shadow: 2px 2px 20px #6004ff;
+            stroke: #6004ff;
+            -webkit-text-shadow: 2px 2px 20px #6004ff;
+            -moz-text-shadow: 2px 2px 20px #6004ff;
+            -webkit-text-stroke-color: #6004ff;
+            color: #6004ff;
+            cursor: pointer;
+        }
     }
 }
