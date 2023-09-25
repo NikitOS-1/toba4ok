@@ -1,0 +1,26 @@
+.wrap_notFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    text-shadow: 2px 2px 10px #6004ff;
+
+    .title {
+        margin-top: 5%;
+
+        h1 {}
+
+        h3 {}
+    }
+
+    .desc {
+        margin-top: 5%;
+
+        h1 {
+            font-size: 100px;
+            text-shadow: 10px 10px 10px #6004ff;
+        }
+    }
+}
