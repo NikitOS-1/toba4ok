@@ -14,5 +14,5 @@ const cartToggle = createSlice({
   },
 });
 
-export const { toggleMenu } = cartToggle.actions;
+export const { toggleCart } = cartToggle.actions;
 export default cartToggle.reducer;

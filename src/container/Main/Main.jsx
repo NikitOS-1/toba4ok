@@ -7,6 +7,7 @@ import RequireAuth from "../../hooks/PrivatePages/RequireAuth";
 import { useSelector } from "react-redux";
 import BrandPage from "../../pages/BrandPage/BrandPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import CartList from "../../components/Cart/CartList/CartList";
 
 const HomePage = lazy(() => import("../../pages/HomePage/HomePage"));
 const SignIn = lazy(() => import("../../pages/SignIn/SignIn"));
@@ -22,6 +23,7 @@ const Main = () => {
   return (
     <main className="main">
       <MenuList />
+      <CartList />
       <Routes>
         <Route
           path="/"

@@ -1,0 +1,23 @@
+.wrap_cart {
+    width: 30%;
+    height: 100%;
+    background-color: black;
+    position: fixed;
+    top: 80px;
+    right: -30%;
+    transition: 0.5s;
+    z-index: 20;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 19px;
+    color: white;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+.active {
+    position: fixed;
+    top: 80px;
+    right: 100px;
+    opacity: 1;
+}
