@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import ParallaxRow from "../../components/ParallaxRow/ParallaxRow";
 import "./HomePage.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/autoplay";
 
 const HomePage = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,9 +34,62 @@ const HomePage = () => {
         description={text1}
         revers={true}
       />
-      <div style={{ textAlign: "center", margin: "40px" }}>
-        ------------TOP SALES------------
+
+      <div className="wrap_carousel_top_sales">
+        <div className="title_top_sales">
+          <h1>Top Sales</h1>
+        </div>
+        <Swiper
+          style={{ margin: "70px 0px" }}
+          spaceBetween={0}
+          slidesPerView={5}
+          autoplay={true}
+          effect="fade"
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/DailyHookah-160x120.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/absolem_kupit_tabak---160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/tabak_swipe_kupit-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/afzaL-160x120.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/daim-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/dead-horse-kupit-tabak-new-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/kupit-tabak-dlya-kalyana-4-20-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/tabak-5ive-kupit-160x120.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/Kupit'-tabak-dlja-kal'jana-Tangiers-160x120.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/tabak-spectrum-obzor-vkusy-tsena-160x120.jpg" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/serbetli-tabak-kupit-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/tabak-nual-160x120.png" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <img src="/images/tobac_brand/Molfar-160x120.png" />
+          </SwiperSlide>
+          ...
+        </Swiper>
       </div>
+
       <ParallaxRow imageUrl={img2} title={welcome2} description={text2} />
     </div>
   );
