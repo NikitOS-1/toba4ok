@@ -13,6 +13,37 @@
     color: white;
     transition: 0.3s;
     opacity: 0;
+
+    .wrapper_cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 15px;
+
+        .closed {
+            padding: 15px;
+            margin-right: 90%;
+
+            &:hover {
+                text-shadow: 2px 2px 20px #6004ff;
+                stroke: #6004ff;
+                -webkit-text-shadow: 2px 2px 20px #6004ff;
+                -moz-text-shadow: 2px 2px 20px #6004ff;
+                -webkit-text-stroke-color: #6004ff;
+                color: #6004ff;
+                cursor: pointer;
+            }
+        }
+
+        ul {
+            padding: 25px;
+
+            li {
+                margin: 20px 0px;
+            }
+        }
+    }
 }
 
 .active_cart {

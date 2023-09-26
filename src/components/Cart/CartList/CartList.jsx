@@ -8,8 +8,17 @@ const CartList = () => {
 
   return (
     <div className={`wrap_cart ${isOpen ? "active_cart" : ""}`}>
-      <div onClick={() => dispatch(toggleCart())}>X</div>
-      <h2>CartList</h2>
+      <div className="wrapper_cart">
+        <div onClick={() => dispatch(toggleCart())} className="closed">
+          X
+        </div>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+          <li>item 4</li>
+        </ul>
+      </div>
     </div>
   );
 };
