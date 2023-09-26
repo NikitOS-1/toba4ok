@@ -10,7 +10,9 @@ const Cart = () => {
 
   let count = 0;
   return (
-    <div className="cart" onClick={() => dispatch(toggleCart())}>
+    <div
+      className={`cart ${isOpen ? "active_carts" : ""}`}
+      onClick={() => dispatch(toggleCart())}>
       <span>{count}</span>
       <ShoppingCartIcon />
     </div>

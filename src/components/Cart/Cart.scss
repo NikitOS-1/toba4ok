@@ -22,3 +22,13 @@
         cursor: pointer;
     }
 }
+
+.active_carts {
+    text-shadow: 2px 2px 20px #6004ff;
+    stroke: #6004ff;
+    -webkit-text-shadow: 2px 2px 20px #6004ff;
+    -moz-text-shadow: 2px 2px 20px #6004ff;
+    -webkit-text-stroke-color: #6004ff;
+    color: #6004ff;
+    cursor: pointer;
+}

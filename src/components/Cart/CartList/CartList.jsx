@@ -7,7 +7,7 @@ const CartList = () => {
   const isOpen = useSelector((data) => data.cartToggle.isOpen);
 
   return (
-    <div className={`wrap_cart ${isOpen ? "active" : ""}`}>
+    <div className={`wrap_cart ${isOpen ? "active_cart" : ""}`}>
       <div onClick={() => dispatch(toggleCart())}>X</div>
       <h2>CartList</h2>
     </div>
