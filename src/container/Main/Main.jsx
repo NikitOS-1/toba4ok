@@ -34,6 +34,16 @@ const Main = () => {
           }
         />
         <Route
+          path="/*"
+          element={
+            <RequireAuth>
+              <Suspense fallback={<Loading />}>
+                <NotFoundPage />
+              </Suspense>
+            </RequireAuth>
+          }
+        />
+        <Route
           path="/sign-in"
           element={
             <Suspense fallback={<Loading />}>
@@ -72,16 +82,6 @@ const Main = () => {
             <RequireAuth>
               <Suspense fallback={<Loading />}>
                 <UserPage />
-              </Suspense>
-            </RequireAuth>
-          }
-        />
-        <Route
-          path="/*"
-          element={
-            <RequireAuth>
-              <Suspense fallback={<Loading />}>
-                <NotFoundPage />
               </Suspense>
             </RequireAuth>
           }
