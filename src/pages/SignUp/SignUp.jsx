@@ -34,6 +34,7 @@ const SignUp = () => {
     mode: 'onBlur',
     defaultValues: {
       checkbox: false,
+      checkbox: false,
     },
   })
 
