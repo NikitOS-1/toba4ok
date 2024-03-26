@@ -32,7 +32,9 @@ const SignUp = () => {
     reset,
   } = useForm({
     mode: 'onBlur',
-    defaultValues: {},
+    defaultValues: {
+      checkbox: false,
+    },
   })
 
   const seePass = () => setTypePass((prev) => !prev)
