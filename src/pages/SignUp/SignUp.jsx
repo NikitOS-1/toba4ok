@@ -21,6 +21,7 @@ const SignUp = () => {
   useEffect(() => {
     if (auth.currentUser) {
       navigate('/user')
+      navigate('/user')
     }
   }, [])
 
