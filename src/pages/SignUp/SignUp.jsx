@@ -15,6 +15,7 @@ const SignUp = () => {
   const [checked, setChecked] = useState(false)
   const [typePass, setTypePass] = useState(false)
   const [error, setError] = useState('')
+  const [error, setError] = useState('')
   const auth = getAuth()
   const navigate = useNavigate()
 
