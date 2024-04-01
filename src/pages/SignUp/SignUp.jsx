@@ -17,6 +17,7 @@ const SignUp = () => {
   const [error, setError] = useState('')
   const auth = getAuth()
   const navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (auth.currentUser) {
